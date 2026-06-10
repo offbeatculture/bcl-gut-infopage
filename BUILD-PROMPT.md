@@ -46,6 +46,25 @@ OFFER VARIABLES  (fill what you know; leave blank to let me decide)
 - Anything to AVOID mentioning:
 
 ------------------------------------------------------------------
+DATA SOURCES — REUSE THESE EXACT SHEETS (do not re-invent dates/Q&A)
+------------------------------------------------------------------
+The upcoming programme dates/timings and the chatbot question bank live in two
+published Google Sheets (CSV). Pull the content FROM these — keep them as the
+single source of truth so they can be refreshed later without code changes.
+
+- Programme dates & time sheet (read cell D2 = dates, E2 = time):
+  https://docs.google.com/spreadsheets/d/e/2PACX-1vR7k_ibL4l57reSl5_tU-Iy8f8o2u_FpC3Pvjj_38AalAQLxGmFEqcbrLElxub1pso31_ZdukwyIqCI/pub?gid=138894925&single=true&output=csv
+
+- Question-bank sheet (health/programme Q&A the chatbot answers from):
+  https://docs.google.com/spreadsheets/d/e/2PACX-1vTudreDWnpmq2jhQe4GVlGC_r9HlRvSztUUdAscn7aVNhTh3D1gJXEaZxNm6ByO3z8xUzJUa-s2GZfA/pub?gid=410572440&single=true&output=csv
+
+Fetch both at build time, transcribe their current content into
+src/chatbot/faq-bank.ts (the `PROGRAMME_DATES` / `PROGRAMME_DAYS` /
+`PROGRAMME_TIME` constants and the `EXTRA_QA` / `FACTS` lists), and keep the URLs
+noted in that file so they can be re-pulled when the sheets change. If the
+sheets are unreachable, keep the values already in faq-bank.ts.
+
+------------------------------------------------------------------
 TECH STACK (non-negotiable)
 ------------------------------------------------------------------
 - Vite + React + TypeScript
@@ -131,8 +150,8 @@ CHATBOT (AI-backed but strictly grounded — free tier)
   (GROQ_API_KEY), never in the browser bundle.
 - The model is hard-constrained by a system prompt to answer ONLY from a local,
   editable QUESTION BANK (the page FAQ + an EXTRA_QA list + loose FACTS in
-  src/chatbot/faq-bank.ts). It must NOT invent prices, dates, medical advice,
-  or claims.
+  src/chatbot/faq-bank.ts), seeded from the question-bank Google Sheet above. It
+  must NOT invent prices, dates, medical advice, or claims.
 - The function returns strict JSON: {"reply": string, "canAnswer": boolean}.
   • canAnswer true  → show the warm, concise answer.
   • canAnswer false → for anything not in the bank, opinions ("is it good?",
@@ -210,7 +229,10 @@ so the chatbot Function can reach the LLM. Get a free key at console.groq.com.
   `PRICE`, `REGULAR_PRICE`, and all copy/days/FAQ/testimonials.
 - `src/chatbot/faq-bank.ts` → the question bank the bot answers from: `EXTRA_QA`,
   `FACTS`, and the upcoming `PROGRAMME_DATES` / `PROGRAMME_DAYS` /
-  `PROGRAMME_TIME`. The more you add, the more it answers without hand-off.
+  `PROGRAMME_TIME`. These are sourced from two published Google Sheets — the
+  dates/time sheet (cells D2 & E2) and the question-bank sheet (URLs noted at the
+  top of the build prompt and in this file). Re-pull them when the sheets change;
+  the more Q&A you add, the more the bot answers without hand-off.
 - `src/chatbot/knowledge.ts` → `WHATSAPP_NUMBER`, `TEAM_NAME`.
 - `GROQ_API_KEY` → Netlify env var (never commit it).
 - Drop testimonial screenshots into `public/wall/` and reference them in the

@@ -7,13 +7,19 @@
    If the visitor asks something NOT covered here, the bot will
    politely redirect them to your team on WhatsApp instead of
    guessing. So the more you add, the more it can answer.
+
+   SOURCE SHEETS (re-pull these when they change):
+   • Question bank (health/programme Q&A):
+     https://docs.google.com/spreadsheets/d/e/2PACX-1vTudreDWnpmq2jhQe4GVlGC_r9HlRvSztUUdAscn7aVNhTh3D1gJXEaZxNm6ByO3z8xUzJUa-s2GZfA/pub?gid=410572440&single=true&output=csv
+   • Dates & time (cell D2 = dates, E2 = time):
+     https://docs.google.com/spreadsheets/d/e/2PACX-1vR7k_ibL4l57reSl5_tU-Iy8f8o2u_FpC3Pvjj_38AalAQLxGmFEqcbrLElxub1pso31_ZdukwyIqCI/pub?gid=138894925&single=true&output=csv
    ============================================================ */
 
 import { FAQ, PRICE, REGULAR_PRICE } from '../data';
 
 const inr = (n: number) => `₹${n.toLocaleString('en-IN')}`;
 
-/* Upcoming 5-Day programme schedule (from the dates sheet, D2 & E2). */
+/* Upcoming 5-Day programme schedule — from the dates sheet (D2 = dates, E2 = time). */
 export const PROGRAMME_DATES = '15–19 June';
 export const PROGRAMME_DAYS = 'Monday to Friday';
 export const PROGRAMME_TIME = '7:00 PM to 9:30 PM';
