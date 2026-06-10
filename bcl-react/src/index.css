@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..600&family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+
+@import "tailwindcss";
+
+/* ─────────────────────────────────────────────
+   THEME TOKENS — Breath Chakra Liberation
+   Warm cream paper ground + chakra spectrum accents
+   ───────────────────────────────────────────── */
+@theme {
+  --color-ink:        #f4f0e7; /* warm cream paper */
+  --color-ink-2:      #ece5d5; /* alt section background */
+  --color-surface:    #fbf8f1; /* cards */
+  --color-surface-2:  #f1ead9; /* nested surfaces */
+  --color-border:     #e1d8c5;
+
+  --color-cream:      #233029; /* primary text (deep forest charcoal) */
+  --color-cream-dim:  #4c564d; /* secondary text */
+  --color-muted:      #8b897c; /* captions / labels */
+  --color-cocoa:      #f6f1e6; /* LIGHT text ON dark green / terracotta accents */
+
+  /* brand — forest green structure + terracotta accent */
+  --color-teal:       #356152; /* forest green (accents, borders, links) */
+  --color-teal-deep:  #1f3a2e; /* deep forest (dark bands + primary buttons) */
+  --color-amber:      #c15f3c; /* terracotta (emphasis text + warm accent) */
+  --color-amber-deep: #a4492a; /* deep terracotta */
+
+  /* zone / day accents — warm (grounded) → cool (elevated) journey */
+  --color-root:       #c15f3c; /* basement / survival — terracotta */
+  --color-sacral:     #c07a4e; /* sacral / release — clay */
+  --color-solar:      #b8502e; /* gut / fire — deep terracotta */
+  --color-heart:      #3f6354; /* heart — forest green */
+  --color-throat:     #356152; /* ceiling — green */
+  --color-crown:      #2c5141; /* crown — deep green */
+
+  --font-display: "Fraunces", Georgia, serif;
+  --font-body:    "Inter", system-ui, sans-serif;
+  --font-mono:    "IBM Plex Mono", ui-monospace, monospace;
+}
+
+/* ── BASE ─────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-stopped { overflow: hidden; }
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  background:
+    radial-gradient(60% 40% at 85% 0%, rgba(193,95,60,0.07), transparent 70%),
+    radial-gradient(50% 38% at 5% 22%, rgba(53,97,82,0.06), transparent 70%),
+    linear-gradient(180deg, #f7f3ea 0%, var(--color-ink) 40%, #efe7d6 100%);
+  background-attachment: fixed;
+  color: var(--color-cream);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+::selection { background: var(--color-amber); color: var(--color-cocoa); }
+
+::-webkit-scrollbar { width: 9px; }
+::-webkit-scrollbar-track { background: var(--color-ink-2); }
+::-webkit-scrollbar-thumb { background: var(--color-border); border-radius: 9px; }
+
+/* ── DISPLAY HELPERS ─────────────────────────── */
+.font-display { font-family: var(--font-display); }
+.font-mono    { font-family: var(--font-mono); }
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+}
+
+.balance { text-wrap: balance; }
+
+/* ── BREATHING KEYFRAMES (8s inhale / exhale) ── */
+@keyframes breathe {
+  0%, 100% { transform: scale(0.82); opacity: 0.55; }
+  45%, 55% { transform: scale(1.12); opacity: 1; }
+}
+@keyframes breathe-soft {
+  0%, 100% { transform: scale(1); opacity: 0.6; }
+  50%      { transform: scale(1.06); opacity: 1; }
+}
+@keyframes drift {
+  0%   { transform: translateY(0) translateX(0); opacity: 0; }
+  10%  { opacity: 0.7; }
+  90%  { opacity: 0.4; }
+  100% { transform: translateY(-140px) translateX(24px); opacity: 0; }
+}
+@keyframes spin-slow { to { transform: rotate(360deg); } }
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+@keyframes marquee-left {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+@keyframes marquee-right {
+  from { transform: translateX(-50%); }
+  to   { transform: translateX(0); }
+}
+
+.breathe      { animation: breathe 8s ease-in-out infinite; }
+.breathe-soft { animation: breathe-soft 8s ease-in-out infinite; }
+.spin-slow    { animation: spin-slow 60s linear infinite; }
+
+/* infinite testimonial marquee */
+.marquee-track {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+}
+.marquee-left  { animation: marquee-left  var(--speed, 60s) linear infinite; }
+.marquee-right { animation: marquee-right var(--speed, 60s) linear infinite; }
+.marquee-row:hover .marquee-track { animation-play-state: paused; }
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track { animation: none !important; flex-wrap: wrap; justify-content: center; }
+}
+
+.text-shimmer {
+  background: linear-gradient(100deg, var(--color-amber) 20%, #fff7e6 50%, var(--color-amber) 80%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 6s linear infinite;
+}
+
+/* grain overlay */
+.grain::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ── REDUCED MOTION ──────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
