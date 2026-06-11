@@ -43,7 +43,7 @@ export const EXTRA_QA: { q: string; a: string }[] = [
   },
   {
     q: 'What is included? Are there bonuses?',
-    a: 'You get 5 live sessions with Dr. Valarrmathi, lifetime access to all recordings, private community access, the Gut SOS Audio Pack, 20+ gut-healing recipes, and the Cortisol-Gut Journal.',
+    a: 'You get 5 live sessions with Dr. Valarrmathi and lifetime access to all recordings. Plus 4 bonuses: (1) Deep Rest Protocol — a 21-minute guided sleep rewire system with a sleep & breath hygiene PDF (₹3,000); (2) Daily Integration Meditation Audio Pack — short 2–5 minute meditations for liver cleansing, blood pressure, power activation, and nervous-system reset (₹5,000); (3) 20+ Euphoric Energy Recipes — chakra-mapped, anti-inflammatory meals that support what each day\u2019s breathwork is releasing (₹2,500); (4) Emotional Mastery Journal — a daily nervous-system check-in template with emotional trigger mapping and reframe & release protocols (₹5,000).',
   },
   {
     q: 'How do I join / enrol / buy?',
@@ -63,7 +63,7 @@ export const EXTRA_QA: { q: string; a: string }[] = [
   },
   {
     q: 'Where is it held? Is it online or offline?',
-    a: 'It is a fully online programme, conducted on Zoom for all 5 days. Once you make the payment, you are added to a dedicated WhatsApp community for the 5-day programme. You join from the comfort of your home.',
+    a: 'It is a fully online programme, conducted on Zoom for all 5 days. You join from the comfort of your home — joining details are shared after you enrol.',
   },
   {
     q: 'Is this for both men and women?',

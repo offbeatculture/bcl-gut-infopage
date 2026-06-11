@@ -121,7 +121,7 @@ export const DAYS: DayData[] = [
       'Liver, stomach, and gallbladder release through targeted organ breathwork.',
       'Anger — the most suppressed emotion in gut sufferers — processed and fully discharged.',
       'The connection between self-worth and digestion broken permanently.',
-      '20+ gut-healing recipes with chakra food mapping introduced.',
+      '20+ euphoric energy recipes with chakra food mapping introduced.',
     ],
     result: 'By end of Day 3: many report their first complete bowel movement in years. Bloating and acidity reduce. Appetite returns as a reliable signal. Confidence begins to return.',
     value: '₹8,500',
@@ -165,10 +165,10 @@ export const DAYS: DayData[] = [
 export const INCLUDES = [
   { icon: '🎙', title: '5 Live Sessions with Dr. Valarrmathi', desc: 'One session per day, 7:00 – 9:30 PM. Every session delivered live — not pre-recorded. Teaching, somatic diagnosis, and a 45–60 minute chakra-specific breathwork journey.' },
   { icon: '♾', title: 'Lifetime Access to All Recordings', desc: 'Every session recorded and yours forever. Repeat the Day 3 Manipura journey monthly. Come back to the Day 1 safety anchor whenever life gets hard.' },
-  { icon: '🌿', title: 'Private Community Access', desc: 'A dedicated WhatsApp community for the 5-day journey and beyond. Support, accountability, and continued practice with others on the same path.' },
-  { icon: '🎧', title: 'Gut SOS Audio Pack', desc: 'Three 3-minute emergency breathwork tools: pre-meal nervous-system reset, acute bloating relief, and post-stress gut recovery. Use anywhere, anytime.' },
-  { icon: '🥗', title: '20+ Gut-Healing Recipes', desc: 'Anti-inflammatory meals mapped to Manipura support, liver health, and microbiome restoration. Food that works with the breathwork — not instead of it.' },
-  { icon: '📓', title: 'The Cortisol-Gut Journal', desc: 'A 21-day guided tracking system connecting your daily gut symptoms, emotional patterns, and nervous-system improvements. Make the invisible visible.' },
+  { icon: '🌙', title: 'Bonus 1 — Deep Rest Protocol', desc: 'A 21-minute guided sleep rewire system, plus a sleep and breath hygiene PDF and a specific technique for effortless sleep. The nervous system resets during sleep — without deep rest, the transformation will not stick. Activates melatonin naturally, lowers cortisol spikes, prevents late-night overthinking loops. Value ₹3,000.' },
+  { icon: '🎧', title: 'Bonus 2 — Daily Integration Meditation Audio Pack', desc: 'Short 2–5 minute meditations for liver cleansing, blood pressure, power activation, and nervous system reset. Use before work, between meetings, or before sleep. The practice continues between sessions — and after the programme ends. Value ₹5,000.' },
+  { icon: '🥗', title: 'Bonus 3 — 20+ Euphoric Energy Recipes', desc: 'Chakra-mapped meals designed to support what each day\u2019s breathwork is releasing. Anti-inflammatory structures, hormone support combinations, what to eat when bloated, what to eat when anxious. Food that works with the nervous system — not against it. Value ₹2,500.' },
+  { icon: '📓', title: 'Bonus 4 — Emotional Mastery Journal', desc: 'A daily nervous-system check-in template, an emotional trigger mapping tool, and reframe and release protocols. The journal that makes the invisible visible — tracking what is shifting day by day, keeping the new baseline active long after the 5 days end. Value ₹5,000.' },
 ];
 
 export const TESTIMONIALS = [
@@ -186,11 +186,12 @@ export const VALUE_TABLE = [
   { item: 'Day 3 — Gut Activation (Manipura)', price: 8500 },
   { item: 'Day 4 — 7-Chakra Full Coherence', price: 10000 },
   { item: 'Day 5 — Heart Healing & Anchoring', price: 10000 },
-  { item: 'Gut SOS Audio Pack', price: 3000 },
-  { item: '20+ Gut-Healing Recipes', price: 4000 },
-  { item: 'The Cortisol-Gut Journal', price: 2500 },
+  { item: 'Bonus 1 — Deep Rest Protocol', price: 3000 },
+  { item: 'Bonus 2 — Daily Integration Meditation Audio Pack', price: 5000 },
+  { item: 'Bonus 3 — 20+ Euphoric Energy Recipes', price: 2500 },
+  { item: 'Bonus 4 — Emotional Mastery Journal', price: 5000 },
 ];
-export const TOTAL_VALUE = 55000;
+export const TOTAL_VALUE = 61000;
 export const REGULAR_PRICE = 14999;
 export const PRICE = 7999;
 
@@ -200,14 +201,14 @@ export const CHECKOUT_URL = 'https://pages.razorpay.com/5day-bcl-c?source=cq-gcl
 export const PRICE_INCLUDES = [
   '5 live sessions with Dr. Valarrmathi',
   'Lifetime access to all recordings',
-  'Private community access',
-  'Gut SOS Audio Pack',
-  '20+ Gut-Healing Recipes',
-  'The Cortisol-Gut Journal',
+  'Bonus 1 — Deep Rest Protocol',
+  'Bonus 2 — Daily Integration Meditation Audio Pack',
+  'Bonus 3 — 20+ Euphoric Energy Recipes',
+  'Bonus 4 — Emotional Mastery Journal',
 ];
 
 export const FAQ = [
-  { q: 'Will 5 days fix my gut completely?', a: 'Here is the honest answer. You will feel a significant shift during the 5 days. Most people notice concrete changes in digestion, sleep, and energy within the programme itself. Lasting change — where the gut stays healed even when life is stressful — builds over 30–90 days of daily practice. The 5 days give you the methodology, the experience, the community, and the daily practice. The results compound as you use it.' },
+  { q: 'Will 5 days fix my gut completely?', a: 'Here is the honest answer. You will feel a significant shift during the 5 days. Most people notice concrete changes in digestion, sleep, and energy within the programme itself. Lasting change — where the gut stays healed even when life is stressful — builds over 30–90 days of daily practice. The 5 days give you the methodology, the experience, and the daily practice. The results compound as you use it.' },
   { q: 'I have tried many programmes and nothing worked. How is this different?', a: 'Every programme you have tried worked on the symptom — the food, the thought, the habit. This is the first time you are working on the source — the signal your nervous system is sending. You felt the difference in your own body during the Gut Chakra Reset. Not my explanation. Your experience.' },
   { q: 'My doctor says everything is normal. Is this still for me?', a: '\u201cEverything is normal\u201d means the physical structures are intact. It does not address the nervous-system signal that is keeping digestion suppressed. That is exactly what this programme works on — the layer below the physical that no test currently measures.' },
   { q: 'Can I join if I am on medication?', a: 'Yes. This is a nervous-system regulation and breathwork practice — not a medical treatment. It complements whatever medical care you are already receiving. Continue with your doctor alongside this. Many participants with IBS, GERD, fatty liver, and other diagnosed conditions have found significant relief through this programme.' },

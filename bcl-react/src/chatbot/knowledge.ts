@@ -40,9 +40,9 @@ const EXTRA_KB: KBEntry[] = [
       'Day 1 — Root: the safety signal. Day 2 — Sacral: emotional release. Day 3 — Manipura: gut activation (the deepest session). Day 4 — all 7 chakras: full coherence. Day 5 — Heart: anchoring and breaking the loop.',
   },
   {
-    keywords: ['include', 'included', 'bonus', 'bonuses', 'recipe', 'recipes', 'journal', 'community', 'recording', 'recordings'],
+    keywords: ['include', 'included', 'bonus', 'bonuses', 'recipe', 'recipes', 'journal', 'recording', 'recordings', 'sleep', 'meditation', 'audio'],
     answer:
-      'You get 5 live sessions with Dr. Valarr, lifetime access to all recordings, private community access, the Gut SOS Audio Pack, 20+ gut-healing recipes, and the Cortisol-Gut Journal.',
+      'You get 5 live sessions with Dr. Valarr and lifetime access to all recordings, plus 4 bonuses: the Deep Rest Protocol (sleep rewire), the Daily Integration Meditation Audio Pack, 20+ Euphoric Energy Recipes, and the Emotional Mastery Journal.',
   },
   {
     keywords: ['join', 'enroll', 'enrol', 'register', 'sign', 'buy', 'purchase', 'book'],
